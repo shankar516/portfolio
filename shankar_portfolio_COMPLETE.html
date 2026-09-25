@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shankar P — Data Analyst & AI/Data Science Portfolio. B.Tech AI & Data Science, Python, SQL, Power BI, Machine Learning.">
+<title>Shankar P — Data Analyst & AI Portfolio</title>
+<style>
+  :root{
+    --navy:#0F1B33; --navy2:#16284A; --accent:#2D6CDF; --accent2:#1a54c4;
+    --soft:#EAF1FE; --slate:#5B6478; --offwhite:#F7F9FC; --white:#fff; --line:#E4E8F0;
+    --gold:#F59E0B; --green:#10B981;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:#1C2230;background:var(--white);line-height:1.65;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px;}
+  a{text-decoration:none;color:inherit;}
+  h1,h2,h3{font-weight:800;letter-spacing:-0.02em;}
+  .btn{display:inline-block;padding:14px 30px;border-radius:8px;font-weight:700;font-size:15px;cursor:pointer;transition:opacity .2s;}
+  .btn:hover{opacity:.88;}
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-outline{border:2px solid var(--navy);color:var(--navy);margin-left:12px;}
+  .tag{display:inline-flex;align-items:center;gap:6px;background:var(--soft);color:var(--accent);font-size:13px;font-weight:700;padding:7px 16px;border-radius:20px;margin-bottom:20px;}
+  .section{padding:90px 0;}
+  .eyebrow{color:var(--accent);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px;}
+  .section-title{font-size:34px;margin-bottom:14px;color:var(--navy);}
+  .section-sub{color:var(--slate);max-width:580px;margin-bottom:52px;font-size:16px;}
+
+  /* NAV */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:100;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;}
+  .logo{font-weight:900;font-size:21px;color:var(--navy);}
+  .logo span{color:var(--accent);}
+  .navlinks{display:flex;gap:30px;font-weight:600;font-size:14px;color:var(--slate);}
+  .navlinks a:hover{color:var(--accent);}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,#F0F5FF 0%,var(--offwhite) 60%,#fff 100%);padding:96px 0 64px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:64px;align-items:center;}
+  .hero h1{font-size:46px;line-height:1.14;color:var(--navy);margin-bottom:22px;}
+  .hero h1 .blue{color:var(--accent);}
+  .hero-sub{color:var(--slate);font-size:17px;max-width:500px;margin-bottom:36px;line-height:1.7;}
+  .hero-photo{width:100%;aspect-ratio:1/1.08;border-radius:20px;overflow:hidden;box-shadow:0 32px 80px -16px rgba(15,27,51,.3);}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .stats-row{display:flex;gap:40px;margin-top:48px;padding-top:40px;border-top:1px solid var(--line);}
+  .stat-num{font-size:27px;font-weight:900;color:var(--navy);}
+  .stat-label{font-size:12.5px;color:var(--slate);margin-top:3px;}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:0.75fr 1.25fr;gap:64px;align-items:center;}
+  .about-photo{width:100%;aspect-ratio:3/4;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px -10px rgba(15,27,51,.2);}
+  .about-photo img{width:100%;height:100%;object-fit:cover;}
+  .about-body p{color:var(--slate);font-size:16px;margin-bottom:18px;line-height:1.75;}
+  .about-badge{display:inline-flex;align-items:center;gap:10px;background:#FFF8E1;color:#92610A;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:700;margin-top:8px;}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .skill-card{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:28px;transition:box-shadow .2s,border-color .2s;}
+  .skill-card:hover{box-shadow:0 8px 32px rgba(45,108,223,.1);border-color:#c5d8f8;}
+  .skill-icon{width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;margin-bottom:16px;}
+  .skill-card h3{font-size:15px;color:var(--navy);margin-bottom:10px;}
+  .skill-card p{font-size:13.5px;color:var(--slate);line-height:1.65;}
+
+  /* EXPERIENCE & EDUCATION TIMELINE */
+  .timeline{padding-left:28px;border-left:2px solid var(--line);}
+  .titem{position:relative;padding-bottom:48px;}
+  .titem:last-child{padding-bottom:0;}
+  .titem::before{content:"";position:absolute;left:-36px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--soft);}
+  .tdate{font-size:12.5px;color:var(--accent);font-weight:700;margin-bottom:6px;letter-spacing:.04em;}
+  .titem h3{font-size:19px;color:var(--navy);margin-bottom:3px;}
+  .torg{font-size:14px;color:var(--slate);font-weight:600;margin-bottom:14px;}
+  .titem ul{margin-left:18px;color:var(--slate);font-size:14.5px;}
+  .titem ul li{margin-bottom:8px;line-height:1.6;}
+  .award-badge{display:inline-flex;align-items:center;gap:8px;background:#FFFBEB;color:#92610A;padding:10px 16px;border-radius:8px;font-size:13.5px;font-weight:700;margin-top:12px;border:1px solid #FDE68A;}
+
+  /* CERT SECTION */
+  .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:56px;}
+  .cert-card{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:28px;}
+  .cert-card h3{color:var(--navy);font-size:16px;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+  .cert-card ul{list-style:none;font-size:13.5px;color:var(--slate);}
+  .cert-card ul li{padding:8px 0;border-top:1px solid var(--line);}
+  .cert-card ul li:first-child{border-top:none;}
+
+  /* CERT SHOWCASE */
+  .cert-showcase{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px;}
+  .cert-showcase-card{border-radius:14px;overflow:hidden;border:1.5px solid var(--line);box-shadow:0 6px 24px rgba(15,27,51,.08);}
+  .cert-showcase-card img{width:100%;display:block;}
+  .cert-label{padding:14px 20px;background:var(--offwhite);border-top:1px solid var(--line);}
+  .cert-label .cert-badge-name{font-weight:700;font-size:15px;color:var(--navy);}
+  .cert-label .cert-badge-sub{font-size:13px;color:var(--slate);margin-top:2px;}
+
+  /* PROJECTS */
+  .project-card{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;padding:52px 0;border-bottom:1px solid var(--line);}
+  .project-card:last-child{border-bottom:none;}
+  .project-card.reverse .proj-img-col{order:2;}
+  .proj-img-col{border-radius:14px;overflow:hidden;border:1.5px solid var(--line);box-shadow:0 8px 32px rgba(15,27,51,.1);}
+  .proj-img-col img{width:100%;display:block;aspect-ratio:16/10;object-fit:cover;}
+  .proj-placeholder{aspect-ratio:16/10;background:repeating-linear-gradient(45deg,#EEF1F7 0,#EEF1F7 10px,#E4E8F0 10px,#E4E8F0 20px);display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:#7B88A0;font-size:13px;line-height:1.6;}
+  .proj-num{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;}
+  .proj-content h3{font-size:22px;color:var(--navy);margin-bottom:16px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
+  .chip{background:var(--soft);color:var(--accent);font-size:12px;font-weight:700;padding:5px 12px;border-radius:14px;}
+  .proj-content p{color:var(--slate);font-size:14.5px;margin-bottom:7px;line-height:1.65;}
+  .outcome{background:var(--offwhite);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 8px 8px 0;font-size:13.5px;color:var(--navy);font-weight:700;margin-top:16px;}
+
+  /* STRENGTHS */
+  .strengths-wrap{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .spill{background:var(--soft);color:var(--accent);font-weight:700;font-size:13.5px;padding:8px 16px;border-radius:20px;}
+
+  /* CONTACT */
+  .contact-block{background:var(--navy);border-radius:24px;padding:72px 64px;text-align:center;margin:0 0 0 0;}
+  .contact-block h2{font-size:34px;color:#fff;margin-bottom:14px;}
+  .contact-block .contact-sub{color:#B7C2DC;max-width:460px;margin:0 auto 36px;font-size:16px;}
+  .contact-grid{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-top:48px;border-top:1px solid rgba(255,255,255,.12);padding-top:36px;}
+  .citem b{display:block;color:#fff;font-size:14px;margin-bottom:4px;}
+  .citem span{color:#B7C2DC;font-size:13.5px;}
+
+  footer{text-align:center;padding:36px 0;color:var(--slate);font-size:13px;border-top:1px solid var(--line);}
+
+  /* EXPERIENCE CARD with cert image */
+  .exp-card{background:var(--white);border:1.5px solid var(--line);border-radius:14px;overflow:hidden;}
+  .exp-card-body{padding:28px;}
+  .exp-cert-thumb{width:100%;display:block;border-top:1px solid var(--line);}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────── -->
+<nav>
+  <div class="wrap">
+    <div class="logo">Shankar<span>.</span>P</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-primary" style="padding:10px 22px;font-size:13.5px;">Let's Connect</a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────── -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tag">
+        <span style="width:8px;height:8px;background:#10B981;border-radius:50%;display:inline-block;"></span>
+        Available for Data Analyst / Data Science Roles
+      </div>
+      <h1>Transforming Raw Data into <span class="blue">Actionable AI-Driven</span> Business Solutions.</h1>
+      <p class="hero-sub">B.Tech AI &amp; Data Science Graduate &nbsp;|&nbsp; Python · SQL · Power BI — building data pipelines, predictive models, and BI dashboards that drive decisions.</p>
+      <div>
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="stats-row">
+        <div><div class="stat-num">500K+</div><div class="stat-label">Records Analyzed</div></div>
+        <div><div class="stat-num">4,372</div><div class="stat-label">Customers Segmented</div></div>
+        <div><div class="stat-num">1,000+</div><div class="stat-label">IPL Matches Analyzed</div></div>
+        <div><div class="stat-num">112h</div><div class="stat-label">CDA Training</div></div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="headshot.png" alt="Shankar P — Data Analyst">
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─────────────────────────── -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="headshot.png" alt="Shankar P">
+    </div>
+    <div class="about-body">
+      <div class="eyebrow">About Me</div>
+      <h2 class="section-title">Turning Complex Data Into Clear Business Decisions</h2>
+      <p>Aspiring Data Analyst and AI Engineer with a strong foundation in Python, SQL, Machine Learning, and Data Visualization. I'm a final-year B.Tech student in Artificial Intelligence and Data Science at Suguna College of Engineering, Coimbatore.</p>
+      <p>I've built real-world analytics and AI projects spanning customer segmentation, sports analytics, and NLP — converting messy, large-scale datasets into clear, decision-ready insights using Python, SQL, and Power BI.</p>
+      <p>I'm passionate about solving business problems using data-driven insights — from feature engineering and model evaluation to stakeholder-ready dashboards and AI-powered applications.</p>
+      <div class="award-badge">🏆 24-Hour Codethon Winner — Dr. A.P.J. Abdul Kalam Book of Records</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─────────────────────────── -->
+<section class="section" id="skills" style="background:var(--offwhite);">
+  <div class="wrap">
+    <div class="eyebrow">What I Work With</div>
+    <h2 class="section-title">Technical Skills</h2>
+    <p class="section-sub">A full-stack analytics toolkit — from raw data wrangling to machine learning and business-facing dashboards.</p>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-icon">&lt;/&gt;</div><h3>Programming Languages</h3><p>Python, SQL</p></div>
+      <div class="skill-card"><div class="skill-icon">∑</div><h3>Data Analysis &amp; Manipulation</h3><p>Pandas, NumPy, Data Cleaning &amp; Preprocessing, Exploratory Data Analysis (EDA), Feature Engineering</p></div>
+      <div class="skill-card"><div class="skill-icon">DB</div><h3>Databases</h3><p>MySQL, SQLite</p></div>
+      <div class="skill-card"><div class="skill-icon">📊</div><h3>Data Visualization</h3><p>Power BI, Excel (Pivot Tables, VLOOKUP, Charts), Matplotlib, Seaborn</p></div>
+      <div class="skill-card"><div class="skill-icon">AI</div><h3>Machine Learning</h3><p>Scikit-learn, Regression (Linear, Logistic), Classification Models, Decision Trees &amp; Random Forest, Model Evaluation &amp; Cross Validation</p></div>
+      <div class="skill-card"><div class="skill-icon">🛠</div><h3>Dev Tools</h3><p>Jupyter Notebook, Google Colab, Git &amp; GitHub, VS Code</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EDUCATION ─────────────────────────── -->
+<section class="section" id="education">
+  <div class="wrap">
+    <div class="eyebrow">Background</div>
+    <h2 class="section-title">Education</h2>
+    <p class="section-sub">Academic foundation in artificial intelligence and data science.</p>
+    <div class="timeline">
+      <div class="titem">
+        <div class="tdate">10/2022 — 05/2026</div>
+        <h3>B.Tech, Artificial Intelligence and Data Science</h3>
+        <div class="torg">Suguna College of Engineering, Coimbatore &nbsp;·&nbsp; Affiliated to Anna University</div>
+        <div class="award-badge">🏆 24-Hour Codethon Winner — Dr. A.P.J. Abdul Kalam Book of Records, for innovation &amp; software development under pressure</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─────────────────────────── -->
+<section class="section" id="experience" style="background:var(--offwhite);">
+  <div class="wrap">
+    <div class="eyebrow">Hands-On Experience</div>
+    <h2 class="section-title">Professional Training &amp; Internship</h2>
+    <p class="section-sub">Real-world analytics exposure across industry training and certified internship programmes.</p>
+    <div class="timeline">
+
+      <!-- Rubixe Internship -->
+      <div class="titem">
+        <div class="tdate">21 Mar 2026 — 21 May 2026 &nbsp;·&nbsp; Bangalore (Remote)</div>
+        <h3>Data Analyst Intern — Certified Data Analyst (CDA)</h3>
+        <div class="torg">Rubixe.com &nbsp;·&nbsp; Disruptive Technologies at Work</div>
+        <ul>
+          <li>Gained practical exposure to data analytics through Proof of Concept (POC) projects, project-based assignments, and client-oriented work.</li>
+          <li>Applied analytical concepts to real-world business scenarios — interpreting data, identifying meaningful insights, and contributing to structured problem-solving.</li>
+          <li>Strengthened competencies in Data Analytics, Business Intelligence, and Data Consulting.</li>
+          <li>Demonstrated professionalism, analytical thinking, attention to detail, and teamwork throughout the engagement.</li>
+        </ul>
+        <div style="margin-top:20px;border-radius:12px;overflow:hidden;border:1.5px solid var(--line);max-width:520px;box-shadow:0 6px 24px rgba(15,27,51,.08);">
+          <img src="rubixe_cert.png" alt="Rubixe Internship Experience Letter" style="width:100%;display:block;">
+          <div style="padding:12px 16px;background:var(--white);border-top:1px solid var(--line);">
+            <div style="font-weight:700;font-size:14px;color:var(--navy);">Internship Experience Letter</div>
+            <div style="font-size:12.5px;color:var(--slate);">Rubixe.com · Doc No: RX1790241134 · Dated 24-09-2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DataMites Training -->
+      <div class="titem">
+        <div class="tdate">22 Dec 2025 — 9 Apr 2026 &nbsp;·&nbsp; Coimbatore</div>
+        <h3>Certified Data Analyst (CDA) — 112 Hours Training</h3>
+        <div class="torg">DataMites · Global Institute for Data Science</div>
+        <ul>
+          <li>Completed 112 hours of hands-on training in SQL, Excel, Python, Power BI, data cleaning, exploratory data analysis, and dashboard development.</li>
+          <li>Performed data analysis using real-world retail and business datasets at scale (500K+ records).</li>
+          <li>Built end-to-end analytics projects involving SQL queries, Python-based analysis, and interactive Power BI dashboards.</li>
+        </ul>
+        <div style="margin-top:20px;border-radius:12px;overflow:hidden;border:1.5px solid var(--line);max-width:520px;box-shadow:0 6px 24px rgba(15,27,51,.08);">
+          <img src="datamites_cert.png" alt="DataMites Certified Data Analyst Certificate" style="width:100%;display:block;">
+          <div style="padding:12px 16px;background:var(--white);border-top:1px solid var(--line);">
+            <div style="font-weight:700;font-size:14px;color:var(--navy);">Certificate of Completion — Certified Data Analyst (CDA)</div>
+            <div style="font-size:12.5px;color:var(--slate);">DataMites · Cert No: 99260853645092 · Accredited by IABAC</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ─────────────────────────── -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="eyebrow">Portfolio</div>
+    <h2 class="section-title">Key Projects</h2>
+    <p class="section-sub">End-to-end analytics work spanning customer behavior, sports data, and applied AI.</p>
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="proj-img-col">
+        <div class="proj-placeholder">📊 RFM Segmentation Dashboard<br><br>Export your Seaborn customer-tier charts locally and upload here, or take a screenshot from your LinkedIn / GitHub project page.</div>
+      </div>
+      <div class="proj-content">
+        <div class="proj-num">Project 01</div>
+        <h3>Automated Retail Customer Segmentation &amp; RFM Analytics</h3>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Seaborn</span><span class="chip">Scikit-learn</span><span class="chip">SQL</span>
+        </div>
+        <p>Processed and cleaned 500K+ retail transactions for reliable analysis.</p>
+        <p>Built an RFM model to segment 4,372 customers into 10 distinct business groups.</p>
+        <p>Developed Seaborn dashboards to visualize customer behavior and loyalty trends.</p>
+        <div class="outcome">✅ $569K+ at-risk revenue identified &nbsp;·&nbsp; 578 retention targets flagged</div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card reverse">
+      <div class="proj-img-col">
+        <img src="ipl_dashboard.png" alt="IPL Cricket Statistics Analysis Dashboard — Power BI">
+      </div>
+      <div class="proj-content">
+        <div class="proj-num">Project 02</div>
+        <h3>IPL Cricket Statistics Analysis Dashboard</h3>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">SQL</span><span class="chip">MySQL</span><span class="chip">Power BI</span><span class="chip">Matplotlib</span>
+        </div>
+        <p>Analyzed 1,000+ IPL matches and ball-by-ball delivery data for team, player, toss, and venue performance insights.</p>
+        <p>Built Python data-cleaning workflows and SQL queries to surface top run scorers, wicket takers, and toss-impact stats.</p>
+        <p>Delivered an interactive Power BI dashboard with KPI cards, season/team filters, batting &amp; bowling leaderboards.</p>
+        <div class="outcome">✅ 1.09K matches · 17 seasons · Toss win rate: 50.83% — only marginal advantage</div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <div class="proj-img-col">
+        <img src="project3_app_screenshot1.png" alt="AI Resume Analyzer and Career Roadmap — Streamlit app">
+      </div>
+      <div class="proj-content">
+        <div class="proj-num">Project 03</div>
+        <h3>Unified Student Employability &amp; Learning Support System (AI/NLP)</h3>
+        <div class="chip-row">
+          <span class="chip">Streamlit</span><span class="chip">LangChain</span><span class="chip">Groq API</span><span class="chip">Llama 3</span><span class="chip">Pandas</span><span class="chip">Python</span>
+        </div>
+        <p>Built a student progress platform using Streamlit and Pandas for academic and career tracking.</p>
+        <p>Integrated LangChain + Groq (Llama 3) for AI-powered resume analysis, skill extraction, and career guidance.</p>
+        <p>Developed performance analytics and mock interview modules with real-time AI feedback.</p>
+        <div class="outcome">✅ PBKDF2 secure auth &nbsp;·&nbsp; Live skill-distribution analytics &nbsp;·&nbsp; AI mock interview simulation</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CERTIFICATIONS ─────────────────────────── -->
+<section class="section" id="certifications" style="background:var(--offwhite);">
+  <div class="wrap">
+    <div class="eyebrow">Credentials</div>
+    <h2 class="section-title">Certifications &amp; Licences</h2>
+    <p class="section-sub">Continuous learning across cloud AI, programming, and data analysis platforms.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <h3>🔶 Oracle</h3>
+        <ul><li>OCI 2023 AI Certified Foundations Associate</li></ul>
+      </div>
+      <div class="cert-card">
+        <h3>🔵 IBM</h3>
+        <ul>
+          <li>Python 101 for Data Science</li>
+          <li>SQL and Relational Databases 101</li>
+          <li>Prompt Engineering for Everyone</li>
+        </ul>
+      </div>
+      <div class="cert-card">
+        <h3>🟦 Microsoft / LinkedIn</h3>
+        <ul>
+          <li>Power BI for Beginners</li>
+          <li>Career Essentials in Data Analysis</li>
+          <li>Career Essentials in Generative AI</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Certificate Image Showcase -->
+    <div class="eyebrow" style="margin-bottom:10px;">Official Certificates</div>
+    <h3 style="font-size:22px;color:var(--navy);margin-bottom:24px;">Training &amp; Internship Certificates</h3>
+    <div class="cert-showcase">
+      <div class="cert-showcase-card">
+        <img src="datamites_cert.png" alt="DataMites Certified Data Analyst Certificate">
+        <div class="cert-label">
+          <div class="cert-badge-name">Certified Data Analyst (CDA)</div>
+          <div class="cert-badge-sub">DataMites · 112 Hours · Cert No: 99260853645092 · IABAC Accredited</div>
+        </div>
+      </div>
+      <div class="cert-showcase-card">
+        <img src="rubixe_cert.png" alt="Rubixe Internship Experience Letter">
+        <div class="cert-label">
+          <div class="cert-badge-name">Internship Experience Letter</div>
+          <div class="cert-badge-sub">Rubixe.com · Certified Data Analyst Focus · Mar–May 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strengths -->
+    <div style="margin-top:56px;">
+      <div class="eyebrow">Core Attributes</div>
+      <h3 style="font-size:22px;color:var(--navy);margin-bottom:16px;">Professional Strengths</h3>
+      <div class="strengths-wrap">
+        <span class="spill">Attention to Detail</span>
+        <span class="spill">Analytical Thinking</span>
+        <span class="spill">Data Interpretation</span>
+        <span class="spill">Problem Solving</span>
+        <span class="spill">Logical Reasoning</span>
+        <span class="spill">Adaptability</span>
+        <span class="spill">Time Management</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─────────────────────────── -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-block">
+      <h2>Let's Build Something Data-Driven</h2>
+      <p class="contact-sub">Open to Data Analyst, Data Science, and AI Engineering opportunities. Let's talk about how I can bring value to your team.</p>
+      <a href="mailto:shankarshankar2504@gmail.com" class="btn btn-primary">Email Me</a>
+      <a href="https://shankar-portfolio-woad.vercel.app" target="_blank" class="btn btn-outline" style="border-color:#fff;color:#fff;">Live Portfolio</a>
+      <div class="contact-grid">
+        <div class="citem"><b>📧 Email</b><span>shankarshankar2504@gmail.com</span></div>
+        <div class="citem"><b>📱 Phone</b><span>+91 86680 84812</span></div>
+        <div class="citem"><b>📍 Location</b><span>Coimbatore, Tamil Nadu, India</span></div>
+        <div class="citem"><b>💼 LinkedIn</b><span>linkedin.com/in/shankar-p-06719b378</span></div>
+        <div class="citem"><b>💻 GitHub</b><span>github.com/shankar516</span></div>
+        <div class="citem"><b>🌐 Portfolio</b><span>shankar-portfolio-woad.vercel.app</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Shankar P. — Data Analyst &amp; AI/ML Enthusiast &nbsp;·&nbsp; Coimbatore, Tamil Nadu, India</div>
+</footer>
+
+</body>
+</html>
